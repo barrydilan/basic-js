@@ -29,6 +29,7 @@ function renameFiles(names) {
     }
   }
   return names;
+  console.log('first')
 }
 
 
