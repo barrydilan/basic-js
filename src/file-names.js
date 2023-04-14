@@ -30,7 +30,28 @@ function renameFiles(names) {
 //   }
 //   return names;
 //   console.log('first')
+  const renamed = {};
+  const result = [];
+
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i];
+    let newName = name;
+
+    if (renamed[newName] === undefined) {
+      renamed[newName] = 0;
+    } else {
+      renamed[newName]++;
+      newName = `${name}(${renamed[newName]})`;
+    }
+
+    result.push(newName);
+    renamed[newName] = 0;
+  }
+
+  return result;
 }
+
+
 
 
 
